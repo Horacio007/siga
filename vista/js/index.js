@@ -427,4 +427,13 @@ $(document).ready(function(){
             }
         })
     });
+
+    $("#resingr").on('click', function(){
+        $.ajax({
+            url: '/siga/vista/paginas/resumen_ingresos.php',
+            success: function (result){
+                $("#principal").html(result);
+            }
+        })
+    });
 })

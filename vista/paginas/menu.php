@@ -102,6 +102,7 @@
                 <a class="dropdown-item" href="#" id="fact">Cargar Facturas</a>
                 <a class="dropdown-item" href="#" id="afact">Resumen Facturas</a>
                 <a class="dropdown-item" href="#" id="ingr">Cargar Ingresos</a>
+                <a class="dropdown-item" href="#" id="resingr">Resumen Ingresos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/siga/controlador/login_cerrar.php">Cerrar Sesión</a>

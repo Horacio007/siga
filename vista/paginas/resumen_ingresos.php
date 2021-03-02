@@ -8,7 +8,7 @@
         exit();
     }
 ?>
-    <link rel="stylesheet" href="/siga/vista/css/ingresos.css">
+    <link rel="stylesheet" href="/siga/vista/css/resumen_ingresos.css">
     <link rel="stylesheet" type="text/css" href="/siga/vista/libs/DataTables-1.10.22/css/jquery.dataTables.css"/>
     <link rel="stylesheet" type="text/css" href="/siga/vista/libs/Buttons-1.6.5/css/buttons.dataTables.css"/>
     <link rel="stylesheet" type="text/css" href="/siga/vista/libs/Responsive-2.2.6/css/responsive.dataTables.css"/>
@@ -16,13 +16,13 @@
         <form action="" class="formdata" id="formdata">
             <div class="row">
                 <div class="col text-center">
-                    <h3>Cargar Ingresos</h3>
+                    <h3>Actualizar Ingresos</h3>
                 </div>
             </div>
             <br>
             <div class="row">
                     <div class="col-md-4">
-                        <label for="">No. Expediente</label>
+                        <label for="">No. Expediente (Id)</label>
                         <input type="text" class="form-control" id="id_vehiculo">
                     </div>
                     <div class="col-md-4">
@@ -113,21 +113,28 @@
                     <div class="panel panel-default">
                         <div class="panel-body" id="panel">
                             <div class="table-responsive">
-                                <table id="lista_vehiculos" class="table table-striped table-bordered" border="0">
+                                <table id="lista_ingresos" class="table table-striped table-bordered" border="0">
                                     <thead class="text-capitalize">
                                         <tr>
+                                            <th>Id</th>
                                             <th>Expediente</th>
-                                            <th>Estatus</th>
-                                            <th>Fecha Salida Taller</th>
                                             <th>Marca</th>
                                             <th>Linea</th>
                                             <th>Color</th>
                                             <th>Modelo</th>
                                             <th>Placas</th>
                                             <th>Cliente</th>
+                                            <th>Tipo Servicio</th>
+                                            <th>Fecha de Anticipo</th>
+                                            <th>Anticipo</th>
+                                            <th>Tipo de Pago Anticipo</th>
+                                            <th>Fecha Finiquito</th>
+                                            <th>Finiquito</th>
+                                            <th>Tipo de Pago Finiquito</th>
+                                            <th>Total</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="listado_vehiculos">
+                                    <tbody id="listado_ingresos">
 
                                     </tbody>
                                 </table>
@@ -139,7 +146,7 @@
         </form>
     </div>
 
-    <script src="/siga/vista/js/ingresos.js"></script>
+    <script src="/siga/vista/js/resumen_ingresos.js"></script>
     <script type="text/javascript" src="/siga/vista/libs/pdfmake-0.1.36/pdfmake.js"></script>
     <script type="text/javascript" src="/siga/vista/libs/pdfmake-0.1.36/vfs_fonts.js"></script>
     <script type="text/javascript" src="/siga/vista/libs/DataTables-1.10.22/js/jquery.dataTables.js"></script>

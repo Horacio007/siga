@@ -47,7 +47,7 @@
         }
 
         public function getExpediente() {
-            return $this->fecha;
+            return $this->expediente;
         }
 
         public function setExpediente($expediente) {
@@ -165,7 +165,6 @@
         public function setTotal($total) {
             $this->total = $total;
         }
-
 
     }
 

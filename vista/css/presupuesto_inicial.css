@@ -1,0 +1,8 @@
+#btn_buscar, #btn_calcular, #btn_calcular2, #btn_registrar {
+    cursor:pointer; 
+    cursor: hand;
+}
+
+#btn_registrar {
+    margin-bottom: 10px;
+}

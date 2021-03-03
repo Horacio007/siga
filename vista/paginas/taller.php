@@ -39,7 +39,12 @@
             </div>
             <br>
             <div class="row">
-                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                    <label for=""></label>
+                    <div id="inf" class="text-center">
+                        <label for="" id="info"></label>
+                    </div>
+                </div>
                 <div class="col-md-2" id="tablaHoja">
                     <center><strong>Hojalateria</strong></center>
                     <label for="" id="laplicahoja">Aplica -> </label>

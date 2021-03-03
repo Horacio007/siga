@@ -32,6 +32,7 @@
                     <button type="button" class="btn btn-primary btn-lg btn-block" id="btn_buscar">Buscar</button>
                 </div>
                 <div class="col-md-4">
+                    <label for=""></label>
                     <div id="inf" class="text-center">
                         <label for="" id="info"></label>
                     </div>

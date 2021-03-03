@@ -192,7 +192,28 @@ $(document).ready(function(){
                     })
 
                     $("#id_vehiculo").attr("readonly","readonly");
-                    $("#btnmodificar").attr('disabled', false);   
+                    $("#btnmodificar").attr('disabled', false);
+                    
+                    //intento si no jala borrar jajajja
+                    $.ajax({
+                        url: '/siga/controlador/get_MLM.php',
+                        type: 'POST',
+                        data: {
+                            id: $("#id_vehiculo").val()
+                        },
+                        success: function(result){
+                            arr = JSON.parse(result);
+                            //console.log(arr);
+                            $("#inf").fadeIn();
+                            $("#inf").css('border-radius', '5px');
+                            $("#inf").css('background-color', '#53ee7e'); 
+                            $("#info").text('Vehiculo: '+ arr['marca'] + ' ' + arr['linea'] + ' ' + arr['modelo']);
+                        }
+                    })
+
+
+                    //intento borrrar jajaj
+
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -303,6 +324,8 @@ $(document).ready(function(){
                     $("#id_vehiculo").removeAttr("readonly");
                     $("#btnmodificar").attr('disabled', true);
                     $("#lista_refacciones").DataTable().destroy();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     recargar();
                 } else {
                     Swal.fire({
@@ -312,6 +335,8 @@ $(document).ready(function(){
                     })
                     limpiar()
                     document.getElementById("formdata").reset();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     $("#id_vehiculo").removeAttr("readonly");
                     $("#btnmodificar").attr('disabled', true);
                 }

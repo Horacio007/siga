@@ -179,7 +179,7 @@ $(document).ready(function(){
     })
 
     //obtengo la informaacion
-    $("#btn_registrar").on('click', function(){
+    $("#btn_actualizar").on('click', function(){
 
         if ($("#id_vehiculo").val() == '') {
             Swal.fire({

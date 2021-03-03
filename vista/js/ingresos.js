@@ -125,41 +125,53 @@ $(document).ready(function(){
 
     //le agrego lo del buscar jejejejps
     $("#btn_buscar").on('click', function(){
-        $.ajax({
-            url: '/siga/controlador/get_vinfo.php',
-            type: 'POST',
-            data: {
-                id: $("#id_vehiculo").val()
-            },
-            success: function(result) {
-                arr = JSON.parse(result);
-                //console.log(arr);
-                if (arr['result'] == 1) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Correcto',
-                        text: 'Vehiculo Encontrado',
-                    });
-                    
-                    $("#marca").val(arr['marca']);
-                    $("#linea").val(arr['linea']);
-                    $("#color").val(arr['color']);
-                    $("#modelo").val(arr['modelo']);
-                    $("#placas").val(arr['placas']);
-                    $("#cliente").val(arr['cliente']);
-                    $("#id_vehiculo").attr('disabled', true);
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: arr['error'],
-                    });
 
-                    document.getElementById("formdata").reset();
+        if ($("#id_vehiculo").val() == 789) {
+            
+            $("#id_vehiculo").attr('disabled', true);
+            Swal.fire({
+                icon: 'success',
+                title: 'Correcto',
+                text: 'Recuerda este cargo no va asignado a ningun vehiculo',
+            });
+        } else {
+            $.ajax({
+                url: '/siga/controlador/get_vinfo.php',
+                type: 'POST',
+                data: {
+                    id: $("#id_vehiculo").val()
+                },
+                success: function(result) {
+                    arr = JSON.parse(result);
+                    //console.log(arr);
+                    if (arr['result'] == 1) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Correcto',
+                            text: 'Vehiculo Encontrado',
+                        });
+                        
+                        $("#marca").val(arr['marca']);
+                        $("#linea").val(arr['linea']);
+                        $("#color").val(arr['color']);
+                        $("#modelo").val(arr['modelo']);
+                        $("#placas").val(arr['placas']);
+                        $("#cliente").val(arr['cliente']);
+                        $("#id_vehiculo").attr('disabled', true);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: arr['error'],
+                        });
+    
+                        document.getElementById("formdata").reset();
+                    }
+                    
                 }
-                
-            }
-        })
+            })
+        }
+        
     })
 
     //obtengo la informaacion

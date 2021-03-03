@@ -22,6 +22,14 @@
         $f_pago_finiquito = $_POST['f_pago_finiquito'];
         $total = $_POST['total'];
 
+        $r = $objeto->insert_ingreso($id, $marca, $linea, $color, $modelo, $placas, $cliente, $tipo_servicio, $f_anticipo, $m_anticipo, $f_pago_anticipo, $f_finiquito, $m_finiquito, $f_pago_finiquito, $total);
+
+        if ($r == 1) {
+            echo 1;
+        } else {
+            echo 'Ingreso no Registrado';
+        }
+        /*
         $ex = $objeto->exist_ingresoInicial($id);
 
         if ($ex == 1) {
@@ -35,6 +43,7 @@
                 echo 'Ingreso no Registrado';
             }
         }
+        */
     }
 
 ?>

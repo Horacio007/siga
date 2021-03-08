@@ -104,7 +104,26 @@ $(document).ready(function(){
                         text: 'Vehiculo Encontrado',
                     })
                     $("#iexpediente").attr("readonly","readonly");
-                    $("#btn_agregar").attr('disabled', false);  
+                    $("#btn_agregar").attr('disabled', false);
+                    //intento si no jala borrar jajajja
+                        $.ajax({
+                            url: '/siga/controlador/get_MLM.php',
+                            type: 'POST',
+                            data: {
+                                id: $("#iexpediente").val()
+                            },
+                            success: function(result){
+                                arro = JSON.parse(result);
+                                //console.log(arr);
+                                $("#inf").fadeIn();
+                                $("#inf").css('border-radius', '5px');
+                                $("#inf").css('background-color', '#53ee7e'); 
+                                $("#info").text('Vehiculo: '+ arro['marca'] + ' ' + arro['linea'] + ' ' + arro['modelo']);
+                            }
+                        })
+
+
+                        //intento borrrar jajaj
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -207,6 +226,8 @@ $(document).ready(function(){
                         text: 'Orden de Re-Trabajo registrada',
                     })
                     document.getElementById("formdata").reset();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     $("#iexpediente").removeAttr("readonly");
                     $("#btn_crear").attr('disabled', true);
                     $("#btn_agregar").attr('disabled', true);
@@ -219,6 +240,8 @@ $(document).ready(function(){
                         text: 'Orden de Re-Trabajo no registrada',
                     })
                     document.getElementById("formdata").reset();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     $("#iexpediente").removeAttr("readonly");
                     $("#btn_crear").attr('disabled', true);
                     $("#btn_agregar").attr('disabled', true);

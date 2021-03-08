@@ -5,7 +5,7 @@ $(document).ready(function(){
     $("#color").attr('disabled', true);
     $("#modelo").attr('disabled', true);
     $("#placas").attr('disabled', true);
-    $("#cliente").attr('disabled', true);
+    $("#cliente").attr('disabled', false);
     //le agrego lo de la tabla 
     $.ajax({
         url: '/siga/controlador/t_ingresos.php',
@@ -191,6 +191,16 @@ $(document).ready(function(){
             return false
         }
 
+        if ($("#cliente").val() == '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Ingresa el Nombre del Cliente',
+            })
+
+            return false
+        }
+
         if ($("#tservicio").val() == 0) {
             Swal.fire({
                 icon: 'error',
@@ -261,6 +271,8 @@ $(document).ready(function(){
                 title: 'Oops...',
                 text: 'Ingresa el monto Total',
             })
+
+            return false
 
         }
         //saco la informacion

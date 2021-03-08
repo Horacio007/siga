@@ -29,7 +29,26 @@ $(document).ready(function(){
                         title: 'Correcto',
                         text: 'Vehiculo Encontrado',
                     })
-                    $("#iexpediente").attr("readonly","readonly");                 
+                    $("#iexpediente").attr("readonly","readonly");
+                    //intento si no jala borrar jajajja
+                        $.ajax({
+                            url: '/siga/controlador/get_MLM.php',
+                            type: 'POST',
+                            data: {
+                                id: $("#iexpediente").val()
+                            },
+                            success: function(result){
+                                arr = JSON.parse(result);
+                                //console.log(arr);
+                                $("#inf").fadeIn();
+                                $("#inf").css('border-radius', '5px');
+                                $("#inf").css('background-color', '#53ee7e'); 
+                                $("#info").text('Vehiculo: '+ arr['marca'] + ' ' + arr['linea'] + ' ' + arr['modelo']);
+                            }
+                        })
+
+
+                        //intento borrrar jajaj           
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -500,6 +519,8 @@ $(document).ready(function(){
                         text: 'Checklist creado',
                     })
                     $("#iexpediente").removeAttr("readonly");
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     document.getElementById("formdata").reset();
                 } else {
                     Swal.fire({
@@ -507,6 +528,8 @@ $(document).ready(function(){
                         title: 'Oops...',
                         text: result,
                     })
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     $("#iexpediente").removeAttr("readonly");
                     document.getElementById("formdata").reset();
                 }

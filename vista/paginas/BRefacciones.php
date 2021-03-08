@@ -24,17 +24,23 @@
                     <label for="">No. Expediente (Id)</label>
                     <input type="text" class="form-control" id="id_vehiculo">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <label for=""></label>
                     <button type="button" class="btn btn-primary btn-lg btn-block" id="btn_buscar">Buscar</button>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <label for=""></label>
                     <button type="button" class="btn btn-success btn-lg btn-block" id="btnmodificar">Actualizar</button>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <label for=""></label>
                     <button type="button" class="btn btn-info btn-lg btn-block" id="btnnvo" data-toggle="tooltip" data-placement="bottom" title="Buscar Nuevo Vehiculo">Buscar Nuevo</button>
+                </div>
+                <div class="col-md-3">
+                    <label for=""></label>
+                    <div id="inf" class="text-center">
+                        <label for="" id="info"></label>
+                    </div>
                 </div>
             </div>
             <div class='row'>

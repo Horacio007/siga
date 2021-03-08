@@ -32,7 +32,26 @@ $(document).ready(function(){
                         text: 'Vehiculo Encontrado',
                     })
                     $("#iexpediente").attr("readonly","readonly");
-                    $("#btn_agregar").attr('disabled', false);                 
+                    $("#btn_agregar").attr('disabled', false);
+                    //intento si no jala borrar jajajja
+                        $.ajax({
+                            url: '/siga/controlador/get_MLM.php',
+                            type: 'POST',
+                            data: {
+                                id: $("#iexpediente").val()
+                            },
+                            success: function(result){
+                                arr = JSON.parse(result);
+                                //console.log(arr);
+                                $("#inf").fadeIn();
+                                $("#inf").css('border-radius', '5px');
+                                $("#inf").css('background-color', '#53ee7e'); 
+                                $("#info").text('Vehiculo: '+ arr['marca'] + ' ' + arr['linea'] + ' ' + arr['modelo']);
+                            }
+                        })
+
+
+                        //intento borrrar jajaj              
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -422,6 +441,8 @@ $(document).ready(function(){
                     $("#btn_calcular").attr('disabled', true);
                     $("#btn_calcular2").attr('disabled', true);
                     document.getElementById("formdata").reset();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     operacion.length = 0;
                     operacion1.length = 0;
                     nivel.length = 0;
@@ -449,6 +470,8 @@ $(document).ready(function(){
                     $("#btn_calcular").attr('disabled', true);
                     $("#btn_calcular2").attr('disabled', true);
                     document.getElementById("formdata").reset();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     operacion.length = 0;
                     operacion1.length = 0;
                     nivel.length = 0;

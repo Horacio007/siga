@@ -188,6 +188,25 @@ $(document).ready(function(){
                     $("#pzsvendidas").val(datos['piezas_vendidas']);
                     $("#importepzsvendidas").val(datos['importe_piezas_vendidas']);
                     $("#porcentapro").val(datos['porcentaje']);
+                     //intento si no jala borrar jajajja
+                     $.ajax({
+                        url: '/siga/controlador/get_MLM.php',
+                        type: 'POST',
+                        data: {
+                            id: $("#id_vehiculo").val()
+                        },
+                        success: function(result){
+                            arre = JSON.parse(result);
+                            //console.log(arr);
+                            $("#inf").fadeIn();
+                            $("#inf").css('border-radius', '5px');
+                            $("#inf").css('background-color', '#53ee7e'); 
+                            $("#info").text('Vehiculo: '+ arre['marca'] + ' ' + arre['linea'] + ' ' + arre['modelo']);
+                        }
+                    })
+
+
+                    //intento borrrar jajaj
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -248,12 +267,16 @@ $(document).ready(function(){
                     $("#btnmodificar").attr('disabled', true);
                     $("#lista_valuaciones").DataTable().destroy();
                     recarga();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                 } else {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Valuacion no Actualizada',
                     })
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     document.getElementById("formdata").reset();
                     $("#id_vehiculo").removeAttr("readonly");
                     $("#btnmodificar").attr('disabled', true);
@@ -271,6 +294,8 @@ $(document).ready(function(){
         $("#btnmodificar").attr('disabled', true);
         $("#lista_valuaciones").DataTable().destroy();
         recarga()
+        $("#info").text('');
+        $("#inf").fadeOut();
     })
 
 })

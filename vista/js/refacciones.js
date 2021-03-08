@@ -45,8 +45,26 @@ $(document).ready(function (){
                             }
 
                             $("#tconcepto").val(con)
-                            
-                        }
+                            //intento si no jala borrar jajajja
+                            $.ajax({
+                                url: '/siga/controlador/get_MLM.php',
+                                type: 'POST',
+                                data: {
+                                    id: $("#iexpediente").val()
+                                },
+                                success: function(result){
+                                    arr = JSON.parse(result);
+                                    //console.log(arr);
+                                    $("#inf").fadeIn();
+                                    $("#inf").css('border-radius', '5px');
+                                    $("#inf").css('background-color', '#53ee7e'); 
+                                    $("#info").text('Vehiculo: '+ arr['marca'] + ' ' + arr['linea'] + ' ' + arr['modelo']);
+                                }
+                            })
+
+
+                            //intento borrrar jajaj
+                            }
                     })             
                 } else {
                     Swal.fire({
@@ -726,6 +744,8 @@ $(document).ready(function (){
                     })
                     $("#iexpediente").removeAttr("readonly");
                     document.getElementById("formdata").reset();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -734,6 +754,8 @@ $(document).ready(function (){
                     })
                     $("#iexpediente").removeAttr("readonly");
                     document.getElementById("formdata").reset();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                 }
             }
         })

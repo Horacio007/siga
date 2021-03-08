@@ -191,6 +191,32 @@
             return $output;
         }
 
+        function select_IdVe_byId($id) {
+            $select_all = "SELECT id_vehiculo FROM facturas WHERE id = '$id'";
+            //print $select_all; exit;
+    
+            $this->set_sql($select_all);
+            $this->db_conn->set_charset('utf8');
+    
+            $result = mysqli_query($this->db_conn, $this->db_query) or die(mysqli_error($this->db_conn));
+            $list = array();
+            $counter = 0;
+            while ($row = mysqli_fetch_assoc($result)) {
+                $object = new facturas();
+    
+                /*los nombres entre comillas son los nombres de las columnas de las tablas
+                se usan los set para enviar el valor al objeto y con el get obtenemos el valor
+                donde lo invoquemos*/
+                $object->setIdVehiculo($row["id_vehiculo"]);
+
+                $counter++;
+                $list[$counter] = $object;
+                unset($object);
+            }
+    
+            return $list;
+        }
+
     }
 
 ?>

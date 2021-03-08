@@ -207,6 +207,37 @@
             return $output;
         }
 
+        function insert_ingresoByFactura($id, $marca, $linea, $color, $modelo, $placas, $cliente, $tipo_servicio, $f_finiquito, $m_finiquito, $f_pago_finiquito, $total) {
+            $insert_ingreso = "INSERT INTO ingresos (id_vehiculo, marca, linea, color, modelo, placas, cliente, tipo_servicio, fecha_finiquito, finiquito, tipo_pago_finiquito, total) VALUES (";
+            $insert_ingreso .= "'" . $id . "',";
+            $insert_ingreso .= "'" . $marca . "',";
+            $insert_ingreso .= "'" . $linea . "',";
+            $insert_ingreso .= "'" . $color . "',";
+            $insert_ingreso .= "'" . $modelo . "',";
+            $insert_ingreso .= "'" . $placas . "',";
+            $insert_ingreso .= "'" . $cliente . "',";
+            $insert_ingreso .= "'" . $tipo_servicio . "',";
+            $insert_ingreso .= "'" . $f_finiquito . "',";
+            $insert_ingreso .= "'" . $m_finiquito . "',";
+            $insert_ingreso .= "'" . $f_pago_finiquito . "',";
+            $insert_ingreso .= "'" . $total . "')";
+
+            //print $insert_ingreso; exit;
+
+            $this->set_sql($insert_ingreso);
+            $this->db_conn->set_charset('utf8');
+
+            mysqli_query($this->db_conn, $this->db_query) or die(mysqli_error($this->db_conn));
+
+            if (mysqli_affected_rows($this->db_conn) == 1) {
+                $inserted = 1;
+            } else {
+                $inserted = 0;
+            }
+
+            return $inserted;
+        }
+
     }
 
 ?>

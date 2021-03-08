@@ -139,6 +139,26 @@ $(document).ready(function(){
                     $("#proveedor3").val(datos['proveedor3']);
                     $("#provrefaccion3").val(datos['refaccionaria3']);
                     $("#fechap3").val(datos['fecha3']);
+
+                    //intento si no jala borrar jajajja
+                    $.ajax({
+                        url: '/siga/controlador/get_MLM.php',
+                        type: 'POST',
+                        data: {
+                            id: $("#id_vehiculo").val()
+                        },
+                        success: function(result){
+                            arre = JSON.parse(result);
+                            //console.log(arr);
+                            $("#inf").fadeIn();
+                            $("#inf").css('border-radius', '5px');
+                            $("#inf").css('background-color', '#53ee7e'); 
+                            $("#info").text('Vehiculo: '+ arre['marca'] + ' ' + arre['linea'] + ' ' + arre['modelo']);
+                        }
+                    })
+
+
+                    //intento borrrar jajaj
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -198,12 +218,16 @@ $(document).ready(function(){
                     $("#btnmodificar").attr('disabled', true);
                     $("#lista_refacciones").DataTable().destroy();
                     recargar();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                 } else {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Refaccion no Actualizada',
                     })
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     document.getElementById("formdata").reset();
                     $("#id_vehiculo").removeAttr("readonly");
                     $("#btnmodificar").attr('disabled', true);
@@ -220,7 +244,9 @@ $(document).ready(function(){
         $("#id_vehiculo").removeAttr("readonly");
         $("#btnmodificar").attr('disabled', true);
         $("#lista_valuaciones").DataTable().destroy();
-        recarga()
+        recargar()
+        $("#info").text('');
+        $("#inf").fadeOut();
     })
 })
 

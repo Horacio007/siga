@@ -436,4 +436,22 @@ $(document).ready(function(){
             }
         })
     });
+
+    $("#barraqr").on('click', function(){
+        $.ajax({
+            url: '/siga/vista/paginas/c_barras_qr.php',
+            success: function (result){
+                $("#principal").html(result);
+            }
+        })
+    });
+
+    $("#afina").on('click', function(){
+        $.ajax({
+            url: '/siga/vista/paginas/afinaciones.php',
+            success: function (result){
+                $("#principal").html(result);
+            }
+        })
+    });
 })

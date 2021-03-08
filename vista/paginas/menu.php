@@ -56,6 +56,7 @@
                 <a class="dropdown-item" href="#" id="bajarefacciones">Baja Refacciones</a>
                 <a class="dropdown-item" href="#" id="listarefacciones">Listado de Refacciones</a>
                 <a class="dropdown-item" href="#" id="listaentregadas">Listado de Refacciones Entregadas</a>
+                <a class="dropdown-item" href="#" id="barraqr">Codigos</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Taller</a>
@@ -103,6 +104,11 @@
                 <a class="dropdown-item" href="#" id="afact">Resumen Facturas</a>
                 <a class="dropdown-item" href="#" id="ingr">Cargar Ingresos</a>
                 <a class="dropdown-item" href="#" id="resingr">Resumen Ingresos</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalogo Servicios</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#" id="afina">Afinaciones</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/siga/controlador/login_cerrar.php">Cerrar Sesión</a>

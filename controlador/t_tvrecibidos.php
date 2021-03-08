@@ -34,7 +34,7 @@
             }
 
             $nom = ['Qualitas', 'GNP', 'Particular', 'Total'];
-            $val = [$totalq, $totalp, $totalg, $totalv];
+            $val = [$totalq, $totalg, $totalp, $totalv];
 
             for ($i=0; $i < 4; $i++) { 
                 $salida ="<tr>

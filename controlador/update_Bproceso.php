@@ -41,13 +41,10 @@
                 $asignado_hojalateria = 'Marcial';
                break;
 
-            case 2:
-            $asignado_hojalateria = 'Raul';
-            break;
-
             case 3:
                 $asignado_hojalateria = 'Luis Carlos';
                break;
+
            default:
                 $asignado_hojalateria = 'No aplica';
                break;
@@ -68,10 +65,6 @@
         }
         */
         switch ($_POST['asignado_pintura']) {
-            case 5:
-                $asignado_pintura = 'Rodolfo';
-                break;
-
             case 11:
                 $asignado_pintura = 'Felipe';
                 break;
@@ -82,20 +75,12 @@
         }
 
         switch ($_POST['asignado_armado']) {
-            case 6:
-                $asignado_armado = 'Christian';
-                break;
-
             case 12:
                 $asignado_armado = 'Luis Carlos';
                 break;
 
             case 13:
                 $asignado_armado = 'Marcial';
-                break;
-
-            case 14:
-                $asignado_armado = 'Raul';
                 break;
             
             default:
@@ -108,7 +93,7 @@
                 $asignado_detallado = 'Gerardo';
                 break;
 
-            case 15:
+            case 14:
                 $asignado_detallado = 'Juan Manuel';
                 break;
             
@@ -130,14 +115,6 @@
         switch ($_POST['asignado_lavado']) {
             case 8:
                 $asignado_lavado = 'Pablo';
-                break;
-
-            case 16:
-                $asignado_lavado = 'Juan Manuel';
-                break;
-
-            case 17:
-                $asignado_lavado = 'Gerardo';
                 break;
             
             default:

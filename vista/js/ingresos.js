@@ -136,7 +136,7 @@ $(document).ready(function(){
             });
         } else {
             $.ajax({
-                url: '/siga/controlador/get_vinfo.php',
+                url: '/siga/controlador/get_vinfoing.php',
                 type: 'POST',
                 data: {
                     id: $("#id_vehiculo").val()

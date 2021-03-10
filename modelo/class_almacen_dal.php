@@ -138,7 +138,7 @@
         }
 
         function select_databyId($id){
-            $select_all = "SELECT ubicacion, fecha_entrega, estatus, comentarios FROM almacen WHERE id = '$id'";
+            $select_all = "SELECT ubicacion, fecha_entrega, estatus, comentarios, descripcion FROM almacen WHERE id = '$id'";
 
             $this->set_sql($select_all);
             $this->db_conn->set_charset('utf8');
@@ -156,6 +156,7 @@
                 $object->setFecha_entrega($row["fecha_entrega"]);
                 $object->setEstatus($row["estatus"]);
                 $object->setComentarios($row["comentarios"]);
+                $object->setDescripcion($row["descripcion"]);
     
                 $counter++;
                 $list[$counter] = $object;

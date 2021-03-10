@@ -62,6 +62,7 @@ $(document).ready(function(){
                         },
                         select: true,
                         "pageLength": 100,
+                        "order": [[8, "desc"], [9, "desc"], [10, "desc"], [11, "desc"]],
                         "rowCallback": function(nRow, aData) {
 
                             if (aData[8] == 0) {

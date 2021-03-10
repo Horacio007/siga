@@ -45,6 +45,10 @@
                 $asignado_hojalateria = 'Luis Carlos';
                break;
 
+            case 18:
+                $asignado_hojalateria = 'Alejandro';
+                break;
+
            default:
                 $asignado_hojalateria = 'No aplica';
                break;

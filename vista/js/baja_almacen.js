@@ -135,6 +135,10 @@ $(document).ready(function(){
                     $("#afechaentrega").val(arr['fecha_entrega']);
                     $("#aestatus").val(arr['estatus']);
                     $("#acomentarios").val(arr['comentarios'])
+                    $("#inf").fadeIn();
+                    $("#inf").css('border-radius', '5px');
+                    $("#inf").css('background-color', '#53ee7e'); 
+                    $("#info").text('Refaccion: '+ arr['descripcion']);
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -171,6 +175,8 @@ $(document).ready(function(){
                         text: 'Refaccion Actualizada',
                     })
                     document.getElementById("formdata").reset();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     $("#id_vehiculo").removeAttr("readonly");
                     $("#btnmodificar").attr('disabled', true);
                     $("#lista_refacciones").DataTable().destroy();
@@ -182,6 +188,8 @@ $(document).ready(function(){
                         text: 'Refaccion no Actualizada',
                     })
                     document.getElementById("formdata").reset();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     $("#id_vehiculo").removeAttr("readonly");
                     $("#btnmodificar").attr('disabled', true);
                 }

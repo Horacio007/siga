@@ -16,6 +16,7 @@
                 $fecha_entrega = $value->getFecha_entrega();
                 $estatus = $value->getEstatus();
                 $comentarios = $value->getComentarios();
+                $descripcion = $value->getDescripcion();
             }
 
             $refa = array(
@@ -24,7 +25,8 @@
                 'ubicacion' => $ubicacion,
                 'fecha_entrega' => $fecha_entrega,
                 'estatus' => $estatus,
-                'comentarios' => $comentarios
+                'comentarios' => $comentarios,
+                'descripcion' => $descripcion
             );
 
             echo json_encode($refa);

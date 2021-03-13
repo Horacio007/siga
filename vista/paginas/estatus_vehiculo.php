@@ -1,7 +1,7 @@
 <?php 
     include_once '../incluciones/sesion.php';
 
-    if ($_SESSION['user'] == 'Ernesto' || $_SESSION['user'] == 'Noel' || $_SESSION['user'] == 'Raul' || $_SESSION['user'] == 'Alfredo' || $_SESSION['user'] == 'Erika') {
+    if ($_SESSION['user'] == 'Ernesto' || $_SESSION['user'] == 'Noel' || $_SESSION['user'] == 'Alfredo' || $_SESSION['user'] == 'Erika') {
         header("Refresh:");
         echo 'No tienes permisos para acceder';
         die();
@@ -29,7 +29,12 @@
                     <label for=""></label>
                     <button type="button" class="btn btn-primary btn-lg btn-block" id="btn_buscar">Buscar</button>
                 </div>
-                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <label for=""></label>
+                    <div id="inf" class="text-center">
+                        <label for="" id="info"></label>
+                </div>
+            </div>
             </div>
             <div class="row">
                 <div class="col-md-3">

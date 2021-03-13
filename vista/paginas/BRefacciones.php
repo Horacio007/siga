@@ -1,6 +1,6 @@
 <?php 
     include_once '../incluciones/sesion.php';
-    if ($_SESSION['user'] == 'Noel' || $_SESSION['user'] == 'Alfredo' || $_SESSION['user'] == 'Erika') {
+    if ($_SESSION['user'] == 'Noel' || $_SESSION['user'] == 'Erika') {
         header("Refresh:");
         echo 'No tienes permisos para acceder';
         die();

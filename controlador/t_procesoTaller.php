@@ -11,9 +11,9 @@
 
                 if ($value->getAplica_Hojalateria() == 1) {
                     if ($value->getFecha_Hojalateria() == '0000-00-00') {
-                        $aplihoja = 2;
+                        $aplihoja = 2 . '/' . $value->getAsignado_Hojalateria();
                     } else {
-                        $aplihoja = 1;
+                        $aplihoja = 1 . '/' . $value->getAsignado_Hojalateria();
                     }
                 } else {
                     $aplihoja = 0;

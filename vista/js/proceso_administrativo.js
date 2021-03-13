@@ -62,6 +62,7 @@ $(document).ready(function(){
                     },
                     select: true,
                     "pageLength": 100,
+                    "order": [[9, "desc"], [11, "desc"], [13, "desc"], [15, "desc"]],
                     "rowCallback": function(nRow, aData) {
                         if (aData[7] == 0) {
                             $(nRow).find('td:eq(7)').css('background-color', '#53ee7e');

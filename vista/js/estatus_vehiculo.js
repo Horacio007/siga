@@ -135,6 +135,25 @@ $(document).ready(function(){
                     //le quito lo del desabilitado del actualziar 
                     $("#btnmodificar").attr('disabled', false);
                     $("#iexpediente").attr("readonly","readonly");
+                    //intento si no jala borrar jajajja
+                    $.ajax({
+                        url: '/siga/controlador/get_MLM.php',
+                        type: 'POST',
+                        data: {
+                            id: $("#iexpediente").val()
+                        },
+                        success: function(result){
+                            arre = JSON.parse(result);
+                            //console.log(arre);
+                            $("#inf").fadeIn();
+                            $("#inf").css('border-radius', '5px');
+                            $("#inf").css('background-color', '#53ee7e'); 
+                            $("#info").text('Vehiculo: '+ arre['marca'] + ' ' + arre['linea'] + ' ' + arre['modelo']);
+                        }
+                    })
+
+
+                    //intento borrrar jajaj
 
                 } else {
                     Swal.fire({
@@ -192,6 +211,8 @@ $(document).ready(function(){
                     })
 
                     document.getElementById("formdata").reset();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     $("#iexpediente").removeAttr("readonly");
                     $("#btnmodificar").attr('disabled', true);
                     $("#lista_tallerTransito").DataTable().destroy();
@@ -203,6 +224,8 @@ $(document).ready(function(){
                         text: 'Vehiculo no Entregado',
                     })
                     document.getElementById("formdata").reset();
+                    $("#info").text('');
+                    $("#inf").fadeOut();
                     $("#iexpediente").removeAttr("readonly");
                     $("#btnmodificar").attr('disabled', true);
                 }

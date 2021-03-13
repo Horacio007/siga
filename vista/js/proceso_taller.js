@@ -62,12 +62,14 @@ $(document).ready(function(){
                         },
                         select: true,
                         "pageLength": 100,
-                        "order": [[8, "desc"], [9, "desc"], [10, "desc"], [11, "desc"]],
+                        "order": [[9, "desc"], [10, "desc"], [11, "desc"]],
                         "rowCallback": function(nRow, aData) {
-
+                            
                             if (aData[8] == 0) {
                                 $(nRow).find('td:eq(8)').css('background-color', '#FBC89A'); 
                             }
+                            
+                            var asg_hoja = aData[8].split('/');
 
                             if (aData[8] == 1){ 
                                 $(nRow).find('td:eq(8)').css('background-color', '#53ee7e');  
@@ -79,6 +81,8 @@ $(document).ready(function(){
                                 $(nRow).find('td:eq(9)').css('background-color', '#FBC89A'); 
                             }
 
+                            var asg_pin = aData[9].split('/');
+
                             if (aData[9] == 1){ 
                                 $(nRow).find('td:eq(9)').css('background-color', '#53ee7e');  
                             } else if (aData[9] == 2) {
@@ -89,6 +93,8 @@ $(document).ready(function(){
                                 $(nRow).find('td:eq(10)').css('background-color', '#FBC89A');
                             }
                             
+                            var asg_armado = aData[10].split('/');
+
                             if (aData[10] == 1){ 
                                 $(nRow).find('td:eq(10)').css('background-color', '#53ee7e');  
                             } else if (aData[10] == 2) {
@@ -99,6 +105,8 @@ $(document).ready(function(){
                                 $(nRow).find('td:eq(11)').css('background-color', '#FBC89A'); 
                             }
                             
+                            var asg_deta = aData[11].split('/');
+
                             if (aData[11] == 1){ 
                                 $(nRow).find('td:eq(11)').css('background-color', '#53ee7e');  
                             } else if (aData[11] == 2) {
@@ -109,6 +117,8 @@ $(document).ready(function(){
                                 $(nRow).find('td:eq(12)').css('background-color', '#FBC89A'); 
                             }
                             
+                            var asg_mec = aData[12].split('/');
+
                             if (aData[12] == 1){ 
                                 $(nRow).find('td:eq(12)').css('background-color', '#53ee7e');  
                             } else if (aData[12] == 2) {
@@ -119,9 +129,11 @@ $(document).ready(function(){
                                 $(nRow).find('td:eq(13)').css('background-color', '#FBC89A'); 
                             }
                             
+                            var asg_lav = aData[13].split('/');
+
                             if (aData[13] == 1){ 
                                 $(nRow).find('td:eq(13)').css('background-color', '#53ee7e');  
-                            } else if (aData[13] == 2) {
+                            } else if (aData[13]  == 2) {
                                 $(nRow).find('td:eq(13)').css('background-color', '#F9FFC9'); 
                             }
 
@@ -134,7 +146,7 @@ $(document).ready(function(){
                             } else if (aData[14] == 2) {
                                 $(nRow).find('td:eq(14)').css('background-color', '#F9FFC9'); 
                             }
-
+                            
                         }
                     });
     

@@ -1049,7 +1049,7 @@
         }
 
         function select_ProcesoTaller(){
-            $select_all = "SELECT id, estatus, marca, linea, color, modelo, placas, cliente, aplica_hojalateria, fecha_hojalateria, aplica_preparacion, fecha_preparacion, aplica_pintura, fecha_pintura, aplica_armado, fecha_armado, aplica_detallado, fecha_detallado, aplica_mecanica, fecha_mecanica, aplica_lavado, fecha_lavado, fecha_entrega_interna FROM vehiculo WHERE estatus = 'Taller' OR estatus = 'Transito'";
+            $select_all = "SELECT id, estatus, marca, linea, color, modelo, placas, cliente, aplica_hojalateria, fecha_hojalateria, aplica_preparacion, fecha_preparacion, aplica_pintura, fecha_pintura, aplica_armado, fecha_armado, aplica_detallado, fecha_detallado, aplica_mecanica, fecha_mecanica, aplica_lavado, fecha_lavado, fecha_entrega_interna, asignado_hojalateria, asignado_preparacion, asignado_pintura, asignado_armado, asignado_detallado, asignado_mecanica, asignado_lavado FROM vehiculo WHERE estatus = 'Taller' OR estatus = 'Transito'";
 
             $this->set_sql($select_all);
             $this->db_conn->set_charset('utf8');
@@ -1086,6 +1086,14 @@
                 $object->setAplica_Lavado($row["aplica_lavado"]);
                 $object->setFecha_Lavado($row["fecha_lavado"]);
                 $object->setFecha_Entrega_Interna($row["fecha_entrega_interna"]);
+                $object->setAsignado_Hojalateria($row["asignado_hojalateria"]);
+                $object->setAsignado_Preparacion($row["asignado_preparacion"]);
+                $object->setAsignado_Pintura($row["asignado_pintura"]);
+                $object->setAsignado_Armado($row["asignado_armado"]);
+                $object->setAsignado_Detallado($row["asignado_detallado"]);
+                $object->setAsignado_Mecanica($row["asignado_mecanica"]);
+                $object->setAsignado_Lavado($row["asignado_lavado"]);
+    
     
                 $counter++;
                 $list[$counter] = $object;
